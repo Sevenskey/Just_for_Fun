@@ -16,7 +16,6 @@ function PrintFromTopToBottom(root) {
       arr.push(c.right);
     }
   }
-  console.log(r);
   return r;
 }
 
