@@ -84,7 +84,6 @@ function drawBintree (rNode) {
 }
 
 /* test */
-
 const a = new TreeNode('a');
 a.left = new TreeNode('a', a);
 a.right = new TreeNode('c', a);
@@ -97,6 +96,20 @@ a.left.right.right = new TreeNode('g', a.left.right);
 a.left.right.right.left = new TreeNode('z', a.left.right.right);
 a.left.right.right.right = new TreeNode('y', a.left.right.right);
 
-drawBintree(a)
+const b = new TreeNode('a');
+b.left = new TreeNode('b');
+b.right = new TreeNode('b');
+b.left.left = new TreeNode('c');
+b.left.right = new TreeNode('d');
+b.right.right = new TreeNode('c');
+b.right.left = new TreeNode('d');
+b.left.left.left = new TreeNode('e');
+b.right.right.right = new TreeNode('e');
 
-module.exports = drawBintree;
+/*
+drawBintree(a)
+*/
+
+module.exports.drawBintree = drawBintree;
+module.exports.testTree1 = a;
+module.exports.testTree2 = b;
