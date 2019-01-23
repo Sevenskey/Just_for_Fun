@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="mycanvas"></canvas>
+
+	<script>
+		window.onload = function() {
+			loadImg('1.png', launch);
+		}
+
+		function loadImg(src, callback) {
+			var img = new Image();
+				img.src = src;
+				img.onload = function() {
+					callback.call(img);
+				}
+		}
+
+		function launch() {
+			var canvas = document.getElementById('mycanvas'),
+				ctx = canvas.getContext('2d');
+			var imgWidth = this.width,
+				imgHeight = this.height;
+
+			canvas.width = imgWidth;
+			canvas.height = imgHeight;
+
+			ctx.drawImage(this, 0, 0, imgWidth, imgHeight);
+
+			var imgData = ctx.getImageData(0, 0, imgWidth, imgHeight);
+
+			console.log(imgData.data)
+		}
+
+	</script>
+</body>
+</html>
