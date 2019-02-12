@@ -5,26 +5,6 @@ function TreeNode(x) {
 }
 
 function HasSubtree(pRoot1, pRoot2) {
-  const root1 = pRoot1;
-  const root2 = pRoot2;
-  const roots = [];
-
-  function handler(pRoot1, pRoot2) {
-    if (pRoot2 === null) {
-      return true;
-    }
-    if (pRoot1 === null) {
-      return false;
-    }
-    roots.push(pRoot1);
-    if (pRoot1.val === pRoot2.val) {
-      return handler(pRoot1.left, pRoot2.left) && handler(pRoot1.right, pRoot2.right);
-    }
-    console.log(roots.map(e => e.val))
-    const root1 = roots.shift();
-    return handler(root1.left, root2) || handler(root1.right, root2);
-  }
-  return handler(root1, root2);
 }
 
 const drawBinTree = require('./draw_bintree');
