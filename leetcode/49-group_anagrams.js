@@ -1,0 +1,2 @@
+var groupAnagrams = function (strs) {
+}
